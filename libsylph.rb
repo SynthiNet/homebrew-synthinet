@@ -6,7 +6,7 @@ class Libsylph < Formula
   version '0.2'
 
   depends_on 'cmake' => :build
-  # depends_on 'gcc47' => :build
+  depends_on 'gcc47' => :build
 
   fails_with :clang do
     cause <<-EOS.undent
