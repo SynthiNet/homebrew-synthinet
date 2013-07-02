@@ -63,6 +63,7 @@ class I686elfgcc < Formula
     gmp = Formula.factory 'gmp'
     mpfr = Formula.factory 'mpfr'
     libmpc = Formula.factory 'libmpc'
+    i686elfbinutils = Formula.factory 'i686elfbinutils'
 
     # Sandbox the GCC lib, libexec and include directories so they don't wander
     # around telling small children there is no Santa Claus. This results in a
@@ -89,7 +90,10 @@ class I686elfgcc < Formula
       "--enable-lto",
       "--disable-multilib",
       "--without-headers",
-      "--target=i686-elf"
+      "--target=i686-elf",
+      "LD=#{i686elfbinutils.bin}/i686-elf-ld",
+      "AS=#{i686elfbinutils.bin}/i686-elf-as",
+      "NM=#{i686elfbinutils.bin}/i686-elf-nm"
     ]
 
     args << '--disable-nls' unless build.include? 'enable-nls'

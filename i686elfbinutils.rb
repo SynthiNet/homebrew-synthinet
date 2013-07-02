@@ -9,7 +9,7 @@ class I686elfbinutils < Formula
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--program-prefix=i386-elf-",
+                          "--program-prefix=i686-elf-",
                           "--prefix=#{prefix}",
                           "--infodir=#{info}",
                           "--mandir=#{man}",
