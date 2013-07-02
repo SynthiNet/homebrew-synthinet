@@ -21,7 +21,7 @@ class I686elfgcc < Formula
   depends_on 'gmp'
   depends_on 'libmpc'
   depends_on 'mpfr'
-  depends_on 'i386elfbinutils'
+  depends_on 'i686elfbinutils'
 
   option 'enable-cxx', 'Build the g++ compiler'
   option 'enable-fortran', 'Build the gfortran compiler'
