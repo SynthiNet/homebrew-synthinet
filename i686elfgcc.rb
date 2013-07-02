@@ -136,10 +136,8 @@ class I686elfgcc < Formula
 
       system '../configure', "--enable-languages=#{languages.join(',')}", *args
 
-      system 'make all-gcc'
-      system 'make all-target-libgcc'
-      system 'make install-gcc'
-      system 'make install-target-libgcc'
+      system 'make bootstrap'
+      system 'make install'
 
     end
   end
