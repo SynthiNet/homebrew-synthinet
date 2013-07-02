@@ -9,7 +9,7 @@ class I686elfbinutils < Formula
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--program-prefix=i386elf-",
+                          "--program-prefix=i386-elf-",
                           "--prefix=#{prefix}",
                           "--infodir=#{info}",
                           "--mandir=#{man}",
@@ -17,7 +17,7 @@ class I686elfbinutils < Formula
                           "--enable-interwork",
                           "--enable-multilib",
                           "--disable-nls",
-                          "--target=i686-elf-"
+                          "--target=i686-elf"
     system "make"
     system "make install"
   end
