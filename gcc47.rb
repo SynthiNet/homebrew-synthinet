@@ -14,9 +14,9 @@ end
 
 class Gcc47 < Formula
   homepage 'http://gcc.gnu.org'
-  url 'http://ftpmirror.gnu.org/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2'
-  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.7.2/gcc-4.7.2.tar.bz2'
-  sha1 'a464ba0f26eef24c29bcd1e7489421117fb9ee35'
+  url 'http://ftpmirror.gnu.org/gcc/gcc-4.7.3/gcc-4.7.3.tar.bz2'
+  mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.7.3/gcc-4.7.3.tar.bz2'
+  sha1 '69e02737bd6e1a7c6047d801600d39c32b9427ca'
 
   depends_on 'gmp'
   depends_on 'libmpc'
