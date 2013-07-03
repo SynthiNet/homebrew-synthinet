@@ -94,6 +94,7 @@ class I686elfgcc < Formula
       "LD=#{i686elfbinutils.bin}/i686-elf-ld",
       "AS=#{i686elfbinutils.bin}/i686-elf-as",
       "NM=#{i686elfbinutils.bin}/i686-elf-nm"
+      "RANLIB=#{i686elfbinutils.bin}/i686-elf-ranlib"
     ]
 
     args << '--disable-nls' unless build.include? 'enable-nls'
@@ -136,7 +137,7 @@ class I686elfgcc < Formula
 
       system '../configure', "--enable-languages=#{languages.join(',')}", *args
 
-      system 'make bootstrap'
+      system 'make'
       system 'make install'
 
     end
