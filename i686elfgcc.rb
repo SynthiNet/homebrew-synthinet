@@ -93,7 +93,7 @@ class I686elfgcc < Formula
       "--target=i686-elf",
       "LD=#{i686elfbinutils.bin}/i686-elf-ld",
       "AS=#{i686elfbinutils.bin}/i686-elf-as",
-      "NM=#{i686elfbinutils.bin}/i686-elf-nm"
+      "NM=#{i686elfbinutils.bin}/i686-elf-nm",
       "RANLIB=#{i686elfbinutils.bin}/i686-elf-ranlib"
     ]
 
