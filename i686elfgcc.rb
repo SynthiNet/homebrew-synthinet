@@ -60,10 +60,14 @@ class I686elfgcc < Formula
     # https://trac.macports.org/ticket/27237
     ENV.append 'CXXFLAGS', '-U_GLIBCXX_DEBUG -U_GLIBCXX_DEBUG_PEDANTIC'
 
+
     gmp = Formula.factory 'gmp'
     mpfr = Formula.factory 'mpfr'
     libmpc = Formula.factory 'libmpc'
     i686elfbinutils = Formula.factory 'i686elfbinutils'
+
+    # Set PATH variable
+    ENV.append 'PATH', i686elfbinutils.bin
 
     # Sandbox the GCC lib, libexec and include directories so they don't wander
     # around telling small children there is no Santa Claus. This results in a
@@ -85,16 +89,9 @@ class I686elfgcc < Formula
       "--with-mpfr=#{mpfr.prefix}",
       "--with-mpc=#{libmpc.prefix}",
       "--with-system-zlib",
-      "--enable-stage1-checking",
-      "--enable-plugin",
-      "--enable-lto",
       "--disable-multilib",
       "--without-headers",
-      "--target=i686-elf",
-      "LD=#{i686elfbinutils.bin}/i686-elf-ld",
-      "AS=#{i686elfbinutils.bin}/i686-elf-as",
-      "NM=#{i686elfbinutils.bin}/i686-elf-nm",
-      "RANLIB=#{i686elfbinutils.bin}/i686-elf-ranlib"
+      "--target=i686-elf"
     ]
 
     args << '--disable-nls' unless build.include? 'enable-nls'
@@ -137,8 +134,10 @@ class I686elfgcc < Formula
 
       system '../configure', "--enable-languages=#{languages.join(',')}", *args
 
-      system 'make'
-      system 'make install'
+      system 'make all-gcc'
+      system 'make all-target-libgcc'
+      system 'make install-gcc'
+      system 'make install-target-libgcc'
 
     end
   end
