@@ -16,7 +16,7 @@ class Gcc48 < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftpmirror.gnu.org/gcc/gcc-4.8.2/gcc-4.8.2.tar.bz2'
   mirror 'http://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.bz2'
-  sha1 '4e655032cda30e1928fcc3f00962f4238b502169'
+  sha1 '810fb70bd721e1d9f446b6503afe0a9088b62986'
 
   depends_on 'gmp'
   depends_on 'libmpc'
