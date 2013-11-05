@@ -168,7 +168,7 @@ class CrossLlvm < Formula
       python.site_packages.install buildpath/"bindings/python/#{ver}-llvm"
       # Install clang tools and bindings if requested.
       if build.with? 'clang'
-        mv clang_buildpath/'bindings/python/clang', clang_buildpath/"bindings/python/clang-#{ver}"
+        mv clang_buildpath/'bindings/python/clang', clang_buildpath/"bindings/python/#{ver}-clang"
         python.site_packages.install clang_buildpath/"bindings/python/#{ver}-clang"
       end
     end
